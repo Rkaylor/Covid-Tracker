@@ -68,14 +68,53 @@ $(document).ready(function () {
     }).then(function(response) {
       console.log(response);
       // console.log(response[0].state);
+      var stateSelectedEl = $("#stateSelected")
+      var positiveIncreaseEl = $("#positiveIncrease");
+      var hospitalizeIncreaseEl = $("#hospitalizeIncrease");
+      var totalPosCasesEl = $("#totalPosCases");
+      var currentOnVentilatorEl = $("#currentOnVentilator");
+      var confirmedDeathsEl = $("#confirmedDeaths");
 
       $(".dropdown-item").click(function () {
         state = $(this).text(); //state the user chooses in the dropdown
-        // console.log(state);
         for(var i = 0; i < response.length; i++){
           if(response[i].state === state){
-            console.log("Yippeee! " + response[i].state);
-            console.log("Total: " + response[i].total);
+            stateSelectedEl.text(response[i].state);
+            //lack of data handler for positive increase
+            if(response[i].positiveIncrease === null){
+              positiveIncreaseEl.text("No record");
+            }
+            else{
+              positiveIncreaseEl.text(response[i].positiveIncrease);
+            }
+            //lack of data handler for hospitalization increase
+            if(response[i].hospitalizedIncrease === null){
+              hospitalizeIncreaseEl.text("No record");
+            }
+            else{
+              hospitalizeIncreaseEl.text(response[i].hospitalizedIncrease);
+            }
+            //lack of data handler for positive cases
+            if(response[i].positive === null){
+              totalPosCasesEl.text("No record");
+            }
+            else{
+              totalPosCasesEl.text(response[i].positive);
+            }
+            //lack of data handler for current on ventilator count
+            if(response[i].onVentilatorCurrently === null){
+              currentOnVentilatorEl.text("No record");
+            }
+            else{
+              currentOnVentilatorEl.text(response[i].onVentilatorCurrently);
+            }
+            //lack of data handler for current on ventilator count
+            if(response[i].deathConfirmed === null){
+              confirmedDeathsEl.text("No record");
+            }
+            else{
+              confirmedDeathsEl.text(response[i].deathConfirmed);
+            }
           }
         }
     });
