@@ -51,17 +51,28 @@ $(document).ready(function () {
     "WY",
   ];
   var dropDownMenuEl = $(".dropdown-menu");
+  dropDownMenuEl.empty()
+  dropDownMenuEl.append('<options selected="true" disabled>choose state </options>')
+  dropDownMenuEl.prop('selectedIndex', 0);
+  $.getJSON(url, function (data){
+    $.each(data,)
+  }
   for (var i = 0; i < array.length; i++) {
     dropDownMenuEl.append($("<p class = dropdown-item>").text(array[i]));
   }
-  var state = dropDownMenuEl;
+
+  var lowercase = array.map(v => v.toLowerCase());
+  console.log(lowercase);
+  var state = dropDownMenuEl
+  
 
   var apiKey = "GJGTS1LAlgCHmfh3IpEHsaT0oIk7YvrA";
-  var queryUrl =
-    "https://covidtracking.com/api/v1/states/" + state + "current.json";
+  var queryUrl ="https://covidtracking.com/api/v1/states/" + state + "/current.json";
 
-  console.log(dropDownMenuEl);
-  $("#findState").click(function () {
+  
+  $(".dropdown-item").on('click', function () {
+      console.log("hello")
+      // var state = userinput to lowercase
     $.ajax({
       url: queryUrl,
       method: "GET",
