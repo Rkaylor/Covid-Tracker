@@ -50,53 +50,51 @@ $(document).ready(function () {
     "WI",
     "WY",
   ];
+
   var dropDownMenuEl = $(".dropdown-menu");
-  dropDownMenuEl.empty()
-  dropDownMenuEl.append('<options selected="true" disabled>choose state </options>')
-  dropDownMenuEl.prop('selectedIndex', 0);
-  $.getJSON(url, function (data){
-    $.each(data,)
-  }
-  for (var i = 0; i < array.length; i++) {
-    dropDownMenuEl.append($("<p class = dropdown-item>").text(array[i]));
-  }
+  var state = "";
+for (var i = 0; i < array.length; i++) {
+  dropDownMenuEl.append($("<p class = dropdown-item>").text(array[i]));
+}
 
-  var lowercase = array.map(v => v.toLowerCase());
-  console.log(lowercase);
-  var state = dropDownMenuEl
-  
+var apiKey = "GJGTS1LAlgCHmfh3IpEHsaT0oIk7YvrA";
+var queryUrl =
+  "https://covidtracking.com/api/v1/states/" + state + "/current.json";
 
-  var apiKey = "GJGTS1LAlgCHmfh3IpEHsaT0oIk7YvrA";
-  var queryUrl ="https://covidtracking.com/api/v1/states/" + state + "/current.json";
+  $.ajax({
+    url: queryUrl,
+    method: "GET",
+  }).then(function (response) {
 
-  
-  $(".dropdown-item").on('click', function () {
-      console.log("hello")
+$(".dropdown-item").on("click", function () {
+  state = $(this).text();
+  for (var i = 0; i < response.length; i++) {
+    if (response[i].state === state) {
       // var state = userinput to lowercase
-    $.ajax({
-      url: queryUrl,
-      method: "GET",
-    }).then(function (response) {
-      // Start of Positive Increase
-      var stateDiv = $("<div class='state'>");
+      
+        // Start of Positive Increase
+        var stateDiv = $("<div class='state'>");
 
-      var positiveIncrease = response.positiveIncrease;
+        var positiveIncrease = response.positiveIncrease;
 
-      var p1 = $("<p>").text("Positive Increase" + positiveIncrease);
+        var p1 = $("<p>").text("Positive Increase" + positiveIncrease);
 
-      $(stateDiv).append(p1);
+        $(stateDiv).append(p1);
 
-      $("#stateDump").append(stateDiv);
-      // End of Positive Increase
+        $("#stateDump").append(stateDiv);
+        // End of Positive Increase
 
-      // Start of Hospitalization
-      var total = response.total;
+        // Start of Hospitalization
+        var total = response.total;
 
-      var p2 = $("<p>").text("Total cases within the state " + total);
+        var p2 = $("<p>").text("Total cases within the state " + total);
 
-      $(stateDiv).append(p2);
-      $("#stateDump").append(stateDiv);
-      // End of Hospitalization
-    });
-  });
+        $(stateDiv).append(p2);
+        $("#stateDump").append(stateDiv);
+        // End of Hospitalization
+      };
+    }
+  }
+);
+});
 });
