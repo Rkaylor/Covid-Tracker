@@ -8,13 +8,4 @@ function initMap() {
     });
   }
 
-//  var queryURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDqN5Ux_i_Gqnt2tPy0Xv0StfabuMVbqMs&callback=initMap";
-//  console.log(queryURL);
-// $.ajax({
-//     url: queryURL,
-//     headers: "Access-Control-Allow-Origin",
-//     method: "GET"
-// }).then(function(response){
-//     console.log(response);
-// })
 
