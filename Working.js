@@ -97,4 +97,13 @@ $(".dropdown-item").on("click", function () {
   }
 );
 });
+var globalQueryUrl =
+"https://api.covid19api.com/summary";
+
+  $.ajax({
+    url: globalQueryUrl,
+    method: "GET",
+  }).then(function (response) {
+
+});
 });
