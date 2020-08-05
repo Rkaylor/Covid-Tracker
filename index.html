@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="Description" content="Enter your description here"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 <link rel="stylesheet" href="./assets/style.css">
 
@@ -40,13 +40,36 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8"> <!-- This column contains the two rows for world stats and our map-->
-                <div class="col-md-12"> <!-- This row/col contains our world states-->
-                    <div class="card">
-                        <div class="card-header bg-secondary text-center">World</div>
-                        <div class="card-body bg-primary text-center">World stats</div>
-                    </div>
+            <!-- table -->
+            <div class=" m-0 p-0 .float-left">
+              <div class="customScrollbar table-wrapper">
+              <div class="panel panel-default">
+                  <div class="col-md-8"></div>
+                <div class="panel-heading">
+                  <h4 id = "countryName">
+                    Country Stats 
+                  </h4>
                 </div>
+                <table class="table table-fixed" >
+                  <thead>
+                    <tr>
+                      <th class="col-xs-2 text-center" >Country Name</th>
+                      <th class="col-xs-2 text-center" >Total Recovered</th>
+                      <th Deaths class="col-xs-2 text-center">Total Deaths</th>
+                      <th class="col-xs-2 text-center" > New Confirmed</th> 
+                      <th class="col-xs-2 text-center" >Total Confirmed</th>
+                      <th class="col-xs-2 text-center">New Deaths</th>
+                    </tr>
+                  </thead>
+                  <tbody class="countryName" style = "max-height: 200px; overflow-y: auto;">
+                    <!-- populated from js -->
+                  </tbody>
+                </table>
+              </div>
+          </div>
+        </div>
+        </div>
+      </div>
                 <!-- MAPPING INFO  -->
                 <div class="col-md-12"> <!-- This row/col contains our mapping data-->
                     <div class="card">
@@ -55,8 +78,11 @@
                 </div>
             </div>
         </div>
-    </div>
-
+      </div>
+    
+    
+  
+    
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -64,6 +90,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
 <script src = "./assets/script.js"></script>
+<script src = "test.js"></script>
 <script src = "./assets/openLayers.js"></script>
 </body>
 </html>
