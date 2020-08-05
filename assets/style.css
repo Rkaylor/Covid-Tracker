@@ -1,0 +1,13 @@
+/* Styling for map window */
+.map{
+    width: 100%;
+    height: 600px;
+    border-style: solid;
+    border-color: black;
+}
+
+.ol-zoom{
+    text-align: left;
+}
+
+/* Styling for index.html goes HERE */
