@@ -10,8 +10,9 @@
 <link rel="stylesheet" href="./assets/style.css">
 
 <title>Title</title>
-</head>
+
 <body>
+<<<<<<< HEAD
     <!-- Here is our header, including page Label and dropdown menu-->
     <header class = "bg-danger">
         <p class="projectName text-center">COVID-19 TRACKER</p>
@@ -66,19 +67,44 @@
                   </tbody>
                 </table>
               </div>
+=======
+
+>>>>>>> 6d3ad36ce69ded77d8e480ef3612ce34eaad6ac2
           </div>
         </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card bg-success ">
+          <!-- world table -->
+          <div class="card-body text-center" id="worldCard">
+            <table class = "table table-striped">
+              <thead class = "thead">
+                <tr scope = "row">
+                  <th scope = "col">Country Name</th>
+                  <th scope = "col">Total Recovered</th>
+                  <th scope = "col">Total Deaths</th>
+                  <th scope = "col"> New Confirmed</th> 
+                  <th scope = "col">Total Confirmed</th>
+                  <th scope = "col">New Deaths</th>
+                </tr>
+              </thead>
+              <tbody class="countryName">
+                <!-- populated from js -->
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-                <!-- MAPPING INFO  -->
-                <div class="col-md-12"> <!-- This row/col contains our mapping data-->
-                    <div class="card">
-                        <div class="card-body bg-primary text-center map" id = "map"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+    <div class="row" id = "containerRow_2">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body bg-primary text-center" id = "mapCard">
+            <div class="map" id ="map"></div>
+          </div>
       </div>
+    </div>
+  </div>
     
     
   
