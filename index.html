@@ -7,13 +7,15 @@
 <meta name="Description" content="Enter your description here"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-<link rel="stylesheet" href="./openLayers/assets/style.css">
+<link rel="stylesheet" href="./assets/style.css">
 
 <title>Title</title>
 </head>
 <body>
+    <!-- Here is our header, including page Label and dropdown menu-->
     <header class = "bg-danger">
         <p class="projectName text-center">COVID-19 TRACKER</p>
+        <!-- Dropdown menu and styling -->
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id = "dropdownMenuButton" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">Dropdown Button</button>
@@ -24,7 +26,7 @@
     
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4">  <!-- This column contains content for our state label and state statistics-->
                 <div class="card">
                     <div class="card-header bg-secondary text-center" id = "stateSelected">
                         State
@@ -38,17 +40,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="col-md-12">
+            <div class="col-md-8"> <!-- This column contains the two rows for world stats and our map-->
+                <div class="col-md-12"> <!-- This row/col contains our world states-->
                     <div class="card">
                         <div class="card-header bg-secondary text-center">World</div>
                         <div class="card-body bg-primary text-center">World stats</div>
                     </div>
                 </div>
-                
-                <div class="col-md-12">
+                <!-- MAPPING INFO  -->
+                <div class="col-md-12"> <!-- This row/col contains our mapping data-->
                     <div class="card">
-                        <!-- <div class="card-header bg-secondary text-center">Maps</div> -->
                         <div class="card-body bg-primary text-center map" id = "map"></div>
                     </div>
                 </div>
@@ -62,7 +63,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
-<script src = "test.js"></script>
-<script src = "./openLayers/assets/openLayers.js"></script>
+<script src = "./assets/script.js"></script>
+<script src = "./assets/openLayers.js"></script>
 </body>
 </html>
