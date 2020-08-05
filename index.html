@@ -53,12 +53,12 @@
                 <table class="table table-fixed" >
                   <thead>
                     <tr>
-                      <th class="col-xs-2 text-center" >Country Name</th>
-                      <th class="col-xs-2 text-center" >Total Recovered</th>
-                      <th class="col-xs-2 text-center">Total Deaths</th>
-                      <th class="col-xs-2 text-center" > New Confirmed</th> 
-                      <th class="col-xs-2 text-center" >Total Confirmed</th>
-                      <th class="col-xs-2 text-center">New Deaths</th>
+                      <th onclick="w3.sortHTML('.table', '.item', 'td:nth-child(1)')" style="cursor:pointer"class="col-xs-2 text-center" id="countrySort" >Country Name</th>
+                      <th class="col-xs-2 text-center button" id="totalRecSort">Total Recovered</th>
+                      <th class="col-xs-2 text-center button" id="totalDeathSort">Total Deaths</th>
+                      <th class="col-xs-2 text-center button" id="newConfirmSort" > New Confirmed</th> 
+                      <th class="col-xs-2 text-center button" id="totalConfirmSort">Total Confirmed</th>
+                      <th class="col-xs-2 text-center button" id="newDeathSory">New Deaths</th>
                     </tr>
                   </thead>
                   <tbody class="countryName" style = "max-height: 200px; overflow-y: auto;">

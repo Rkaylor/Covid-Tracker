@@ -57,8 +57,6 @@ $(document).ready(function () {
     dropDownMenuEl.append($("<p class = dropdown-item>").text(array[i]));
   }
  
-
-  var apiKey = "GJGTS1LAlgCHmfh3IpEHsaT0oIk7YvrA";
   var queryUrl = "https://covidtracking.com/api/v1/states/current.json";
     console.log(queryUrl);
 
