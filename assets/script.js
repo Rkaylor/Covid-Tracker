@@ -67,16 +67,20 @@ $(document).ready(function () {
       method: "GET",
     }).then(function(response) {
       console.log(response);
-      // console.log(response[0].state);
-      var stateSelectedEl = $("#stateSelected")
+      //Grab each state area in index.html that we will be putting state data
+      var stateSelectedEl = $("#stateSelected");
       var positiveIncreaseEl = $("#positiveIncrease");
       var hospitalizeIncreaseEl = $("#hospitalizeIncrease");
       var totalPosCasesEl = $("#totalPosCases");
       var currentOnVentilatorEl = $("#currentOnVentilator");
       var confirmedDeathsEl = $("#confirmedDeaths");
 
+      //When the user clicks an item in our drop-down menu
       $(".dropdown-item").click(function () {
-        state = $(this).text(); //state the user chooses in the dropdown
+        //Sets the state of the state data table to the state the user selects in the drop-down
+        state = $(this).text(); 
+        //We pull in an array of objects, so each time we click we circulate through all of our array indexes looking at the 'state' key of each
+        //If the state key matches the state the user selected, we stop at this index of the array to allow us to grab more information
         for(var i = 0; i < response.length; i++){
           if(response[i].state === state){
             stateSelectedEl.text(response[i].state);
@@ -122,23 +126,3 @@ $(document).ready(function () {
 });
 
 
-      // // Start of Positive Increase
-      // var stateDiv = $("<div class='state'>");
-
-      // var positiveIncrease = response.positiveIncrease;
-
-      // var p1 = $("<p>").text("Positive Increase" + positiveIncrease);
-
-      // $(stateDiv).append(p1);
-
-      // $("#stateDump").append(stateDiv);
-      // // End of Positive Increase
-
-      // // Start of Hospitalization
-      // var total = response.total;
-
-      // var p2 = $("<p>").text("Total cases within the state " + total);
-
-      // $(stateDiv).append(p2);
-      // $("#stateDump").append(stateDiv);
-      // // End of Hospitalization
