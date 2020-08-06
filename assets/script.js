@@ -56,7 +56,7 @@ $(document).ready(function () {
   for (var i = 0; i < array.length; i++) {
     dropDownMenuEl.append($("<p class = dropdown-item>").text(array[i]));
   }
- 
+ console.log("array[i]")
 
   var apiKey = "GJGTS1LAlgCHmfh3IpEHsaT0oIk7YvrA";
   var queryUrl = "https://covidtracking.com/api/v1/states/current.json";
@@ -89,7 +89,7 @@ $(document).ready(function () {
               positiveIncreaseEl.text("No record");
             }
             else{
-              positiveIncreaseEl.text(response[i].positiveIncrease);
+              positiveIncreaseEl.text(response[i].positiveIncrease).css("color","red","font:Bold");
             }
             //lack of data handler for hospitalization increase
             if(response[i].hospitalizedIncrease === null){

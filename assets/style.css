@@ -69,6 +69,13 @@ th, td, tr{
 p{
     color: white;
 }
-
+#stateSelected{
+    color: white;
+    font-weight: bold;
+}
+#stateCard{
+    color: white;
+    font-weight: bold;
+}
 
 
