@@ -13,14 +13,6 @@ $.ajax({
   method: "GET",
 }).then(function(response) {
   
-  // var countrySelected = $("CountrySelected");
-  // var newConfirmed = $("NewConfirmed");
-  // var totalConfirmed = $("TotalConfirmed");
-  // var newDeaths = $("NewDeaths");
-  // var totalDeaths = $("TotalDeaths");
-  // var newRecovered = $("NewRecovered");
-  // var totalRecovered = $("TotalRecovered");
-
   console.log(response.Countries);
 
   var country = "";
@@ -86,23 +78,3 @@ $.ajax({
   });
 
 
-// // Start of Positive Increase
-// var stateDiv = $("<div class='state'>");
-
-// var positiveIncrease = response.positiveIncrease;
-
-// var p1 = $("<p>").text("Positive Increase" + positiveIncrease);
-
-// $(stateDiv).append(p1);
-
-// $("#stateDump").append(stateDiv);
-// // End of Positive Increase
-
-// // Start of Hospitalization
-// var total = response.total;
-
-// var p2 = $("<p>").text("Total cases within the state " + total);
-
-// $(stateDiv).append(p2);
-// $("#stateDump").append(stateDiv);
-// // End of Hospitalization
