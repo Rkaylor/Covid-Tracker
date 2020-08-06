@@ -1,122 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-<link rel="stylesheet" href="./assets/style.css">
 
-<title>Title</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="./assets/style.css">
+
+  <title>Title</title>
 
 <body>
-<<<<<<< HEAD
-    <!-- Here is our header, including page Label and dropdown menu-->
-    <header class = "bg-danger">
-        <p class="projectName text-center">COVID-19 TRACKER</p>
-        <!-- Dropdown menu and styling -->
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id = "dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">Dropdown Button</button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style = "max-height: 200px; overflow-y: auto;">
-            </div>
-        </div>
-    </header>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">  <!-- This column contains content for our state label and state statistics-->
-                <div class="card">
-                    <div class="card-header bg-secondary text-center" id = "stateSelected">
-                        State
-                    </div>
-                    <div class="card-body bg-success text-center" id="stateStatistics">State Stats
-                        <p>Positive Increases: <span id = "positiveIncrease" style = "font-weight: bold"></span></p>
-                        <p>Hospitalization Increase: <span id = "hospitalizeIncrease" style = "font-weight: bold"></span></p>
-                        <p>Total Positive Cases: <span id = "totalPosCases" style = "font-weight: bold"></span></p>
-                        <p>Individuals on Ventilator: <span id = "currentOnVentilator" style = "font-weight: bold"></span></p>
-                        <p>Confirmed Deaths: <span id = "confirmedDeaths" style = "font-weight: bold"></span></p>
-                    </div>
-                </div>
-            </div>
-            <!-- table -->
-            <div class=" m-0 p-0 .float-left">
-              <div class="customScrollbar table-wrapper">
-              <div class="panel panel-default">
-                  <div class="col-md-8"></div>
-                <div class="panel-heading">
-                  <h4 id = "countryName">
-                    Country Stats 
-                  </h4>
-                </div>
-                <table class="table table-fixed" >
-                  <thead>
-                    <tr>
-                      <th class="col-xs-2 text-center" id="countrySort" >Country Name</th>
-                      <th class="col-xs-2 text-center button" id="totalRecSort">Total Recovered</th>
-                      <th class="col-xs-2 text-center button" id="totalDeathSort">Total Deaths</th>
-                      <th class="col-xs-2 text-center button" id="newConfirmSort" > New Confirmed</th> 
-                      <th class="col-xs-2 text-center button" id="totalConfirmSort">Total Confirmed</th>
-                      <th class="col-xs-2 text-center button" id="newDeathSory">New Deaths</th>
-                    </tr>
-                  </thead>
-                  <tbody class="countryName" style = "max-height: 200px; overflow-y: auto;">
-                    <!-- populated from js -->
-                  </tbody>
-                </table>
-              </div>
-=======
+  <!-- Here is our header, including page Label and dropdown menu-->
+  <header class="bg-danger">
+    <p class="projectName text-center">COVID-19 TRACKER</p>
+    <!-- Dropdown menu and styling -->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">Dropdown Button</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 200px; overflow-y: auto;">
+      </div>
+    </div>
+  </header>
 
->>>>>>> 6d3ad36ce69ded77d8e480ef3612ce34eaad6ac2
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header bg-secondary text-center" id="stateSelected">
+          </div>
+          <div class="card-body bg-success text-center" id="stateStatistics">State Stats
+            <p>Positive Increases: <span id="positiveIncrease" style="font-weight: bold"></span></p>
+            <p>Hospitalization Increase: <span id="hospitalizeIncrease" style="font-weight: bold"></span></p>
+            <p>Total Positive Cases: <span id="totalPosCases" style="font-weight: bold"></span></p>
+            <p>Individuals on Ventilator: <span id="currentOnVentilator" style="font-weight: bold"></span></p>
+            <p>Confirmed Deaths: <span id="confirmedDeaths" style="font-weight: bold"></span></p>
           </div>
         </div>
       </div>
-      <div class="col-md-8">
-        <div class="card bg-success ">
-          <!-- world table -->
-          <div class="card-body text-center" id="worldCard">
-            <table class = "table table-striped">
-              <thead class = "thead">
-                <tr scope = "row">
-                  <th scope = "col">Country Name</th>
-                  <th scope = "col">Total Recovered</th>
-                  <th scope = "col">Total Deaths</th>
-                  <th scope = "col"> New Confirmed</th> 
-                  <th scope = "col">Total Confirmed</th>
-                  <th scope = "col">New Deaths</th>
-                </tr>
-              </thead>
-              <tbody class="countryName">
-                <!-- populated from js -->
-              </tbody>
-            </table>
-          </div>
+    
+
+
+    <div class="col-md-8">
+      <div class="card bg-success ">
+        <!-- world table -->
+        <div class="card-body text-center" id="worldCard">
+          <table class="table table-striped">
+            <thead class="thead">
+              <tr scope="row">
+                <th onclick="sortTable(0)" scope="col">Country Name</th>
+                <th onclick="sortNumb(0)" scope="col">Total Recovered</th>
+                <th onclick="sortNumb(1)" scope="col">Total Deaths</th>
+                <th onclick="sortNumb(2)" scope="col"> New Confirmed</th>
+                <th onclick="sortNumb(3)" scope="col">Total Confirmed</th>
+                <th onclick="sortNumb(4)" scope="col">New Deaths</th>
+              </tr>
+            </thead>
+            <tbody class="countryName">
+              <!-- populated from js -->
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-    <div class="row" id = "containerRow_2">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-body bg-primary text-center" id = "mapCard">
-            <div class="map" id ="map"></div>
-          </div>
+    </div>
+  </div>
+
+  <div class="row" id="containerRow_2">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body bg-primary text-center" id="mapCard">
+          <div class="map" id="map"></div>
+        </div>
       </div>
     </div>
   </div>
-    
-    
-  
-    
+  </div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
-<script src = "./assets/script.js"></script>
-<script src = "./assets/Worlddata.js"></script>
-<script src = "./assets/openLayers.js"></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+  <script src="./assets/script.js"></script>
+  <script src="./assets/Worlddata.js"></script>
+  <script src="./assets/openLayers.js"></script>
 </body>
+
 </html>

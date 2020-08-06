@@ -13,6 +13,11 @@ $.ajax({
   method: "GET",
 }).then(function(response) {
   
+  this.forEach(function(element, i){
+    element.addEventListener("click", function(){
+      
+    })
+  })
   // var countrySelected = $("CountrySelected");
   // var newConfirmed = $("NewConfirmed");
   // var totalConfirmed = $("TotalConfirmed");
@@ -25,17 +30,17 @@ $.ajax({
 
   var country = "";
   var countryTableEl = $(".countryName");
+  
   for (var i = 0; i < response.Countries.length; i++) {
-    var newRow = $("<tr scope = 'row'>");
-
-    newRow.append($("<td scope = 'col'>").text(response.Countries[i].Country));
-    newRow.append($("<td scope = 'col'>").text(response.Countries[i].TotalRecovered));
-    newRow.append($("<td scope = 'col'>").text(response.Countries[i].TotalDeaths));
-    newRow.append($("<td scope = 'col'>").text(response.Countries[i].NewConfirmed));
-    newRow.append($("<td scope = 'col'>").text(response.Countries[i].TotalConfirmed));
-    newRow.append($("<td scope = 'col'>").text(response.Countries[i].NewDeaths));
-    newRow.append($("<td scope = 'col'>").text(response.Countries[i].Total));
-    countryTableEl.append(newRow);
+    countryTableEl.append($("<tr class='countries text-center'>").append($("<hr>").css("border", "10px")))
+    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].Country));
+    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].TotalRecovered));
+    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].TotalDeaths));
+    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].NewConfirmed));
+    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].TotalConfirmed));
+    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].NewDeaths));
+    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].Total));
+    
     console.log(response.Countries.length)
   }
 
@@ -87,22 +92,65 @@ $.ajax({
 
 
 // // Start of Positive Increase
-// var stateDiv = $("<div class='state'>");
 
-// var positiveIncrease = response.positiveIncrease;
+function sortTable(n){
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("worldCard");
+  switching = true;
+  dir = "asc";
 
-// var p1 = $("<p>").text("Positive Increase" + positiveIncrease);
+  while(switching) {
+    switching = false;
+    rows = table.rows;
+    
+    for (i = 0; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementByTagName("td")[n];
+      y = rows [i +1].getElementByTagName("td")[n];
 
-// $(stateDiv).append(p1);
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()){
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      
+      switchcount ++;
+    } else {
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+      switching = true;
+      }
+    }
+  }
+}
 
-// $("#stateDump").append(stateDiv);
-// // End of Positive Increase
+function sortNumb() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("worldCard");
+  switching = true;
+  
+  while (switching){
+    switching = false;
+    rows = table.rows;
 
-// // Start of Hospitalization
-// var total = response.total;
-
-// var p2 = $("<p>").text("Total cases within the state " + total);
-
-// $(stateDiv).append(p2);
-// $("#stateDump").append(stateDiv);
-// // End of Hospitalization
+    for (i = 1; i < (rows.length -1); i++) {
+      shouldSwitch = false;
+      x= rows[i].getElementByTagName("td")[0];
+      y= rows[i].getElementByTagName('td')[0];
+      
+      if (Number(x.innerHTML) > Number(y.innerHTML)) {
+        shouldSwitch = true;
+        break;
+      }
+    } 
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i +1], rows[i]);
+      switching = true;
+    }
+  }
+}
