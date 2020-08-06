@@ -25,17 +25,17 @@ $.ajax({
 
   var country = "";
   var countryTableEl = $(".countryName");
-  
   for (var i = 0; i < response.Countries.length; i++) {
-    countryTableEl.append($("<tr class='countries text-center'>").append($("<hr>").css("border", "10px")))
-    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].Country));
-    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].TotalRecovered));
-    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].TotalDeaths));
-    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].NewConfirmed));
-    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].TotalConfirmed));
-    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].NewDeaths));
-    countryTableEl.append($("<td class ='table-data text-center'>").text(response.Countries[i].Total));
-    
+    var newRow = $("<tr scope = 'row'>");
+
+    newRow.append($("<td scope = 'col'>").text(response.Countries[i].Country));
+    newRow.append($("<td scope = 'col'>").text(response.Countries[i].TotalRecovered).css("color","green"));
+    newRow.append($("<td scope = 'col'>").text(response.Countries[i].TotalDeaths).css("color", "red"));
+    newRow.append($("<td scope = 'col'>").text(response.Countries[i].NewConfirmed).css("color", "orange"));
+    newRow.append($("<td scope = 'col'>").text(response.Countries[i].TotalConfirmed).css("color", "yellow"));
+    newRow.append($("<td scope = 'col'>").text(response.Countries[i].NewDeaths).css("color", "red"));
+    newRow.append($("<td scope = 'col'>").text(response.Countries[i].Total).css("color", "orange"));
+    countryTableEl.append(newRow);
     console.log(response.Countries.length)
   }
 
