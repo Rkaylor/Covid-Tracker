@@ -13,20 +13,10 @@ $.ajax({
   method: "GET",
 }).then(function(response) {
   
-  this.forEach(function(element, i){
-    element.addEventListener("click", function(){
-      
-    })
-  })
-  // var countrySelected = $("CountrySelected");
-  // var newConfirmed = $("NewConfirmed");
-  // var totalConfirmed = $("TotalConfirmed");
-  // var newDeaths = $("NewDeaths");
-  // var totalDeaths = $("TotalDeaths");
-  // var newRecovered = $("NewRecovered");
-  // var totalRecovered = $("TotalRecovered");
+  
 
-  console.log(response.Countries);
+
+  
 
   var country = "";
   var countryTableEl = $(".countryName");
@@ -101,7 +91,7 @@ function sortTable(n){
 
   while(switching) {
     switching = false;
-    rows = table.rows;
+    var rows = table.rows;
     
     for (i = 0; i < (rows.length - 1); i++) {
       shouldSwitch = false;
